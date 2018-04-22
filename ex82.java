@@ -35,7 +35,7 @@ class cylinder{
 		return a*Math.PI*a*h;
 	}
 }
-public class ex2 {
+public class ex82 {
 	public static void main(String[] args) {
 		rectangle a=new rectangle(1,2);
 		circle b=new circle(3);
