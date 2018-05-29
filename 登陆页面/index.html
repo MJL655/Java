@@ -1,0 +1,88 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="block">
+    <div class="block_top">
+        <div class="logo">
+            <div class="imgblock"></div>
+            <div class="logo_txt">
+                <p class="logo_txt_p1" style="font-family:cursive ">管理员登录</p>
+                <p class="logo_txt_p2">MANAGER LOGIN</p>
+            </div>
+        </div>
+        <div class="block_top_txt">
+            <p class="block_top_txt_p1">登录网页——孟嘉霖制作</p>
+            <p class="block_top_txt_p2">Login Web —— made by mjl</p>
+        </div>
+    </div>
+    <div class="block_form">
+        <form class="block_form_content">
+            <span class="block_form_txt" style="margin-top: 10%;">用户名：</span><input class="block_form_input" type="text"/>
+            <span class="block_form_txt">密码：</span><input class="block_form_input" type=password"/>
+
+            <div class="password_block"></div>
+            <span class="block_form_txt">验证码：</span><input class="block_form_input" type="text" style="margin-top: 3%;"/>
+
+            <button class="block_form_button" style="margin-right: 5%;">管理员登录</button>
+            <button class="block_form_button">重置</button>
+        </form>
+    </div>
+</div>
+<div class="bottom_txt">
+    <p class="bottom_txt_p" style="margin-bottom: 3%;">客户端下载<i class="fa fa-hand-o-right" style="font-size:20px;color:red;margin-left: 2%;"></i>：<a href="#" class="install">安全监管客户端</a></p>
+    <p class="bottom_txt_p">自扫描登录<i class="fa fa-hand-o-right" style="font-size:20px;color:red;margin-left: 2%;"></i>：<a href="#">用户自查管理平台</a></p>
+</div>
+<div class="alert">
+    <div class="alert_top">
+        <span class="alert_p">客户端下载</span>
+        <span class="alert_close"><i class="fa fa-close" style="font-size:25px;"></i></span>
+    </div>
+    <div class="alert_content">
+        <p class="alert_content_p" style="margin-top: 5%;"><i class="fa fa-hand-o-right" style="font-size:24px;color:blue;margin-right: 3%;"></i><a href="#">winXP客户端下载</a></p>
+        <p class="alert_content_p"><i class="fa fa-hand-o-right" style="font-size:24px;color:blue;margin-right: 3%;"></i><a href="#">win7客户端下载</a></p>
+        <p class="alert_content_p"><i class="fa fa-hand-o-right" style="font-size:24px;color:blue;margin-right: 3%;"></i><a href="#">win10客户端下载</a></p>
+    </div>
+</div>
+<script>
+    window.onload=function() {
+        var password_block = document.getElementsByClassName("password_block")[0];
+        shownumber(password_block);
+        var install = document.getElementsByClassName("install")[0];
+        install.onclick = function () {
+            var alert = document.getElementsByClassName("alert")[0];
+            alert.style.display = "block";
+            var alert_close = document.getElementsByClassName("alert_close")[0];
+            alert_close.onclick = function () {
+                alert.style.display = "none";
+            }
+        }
+    }
+
+password_block.onclick=function(){
+
+    shownumber(password_block);
+    }
+
+function shownumber(obj)
+{
+    obj.innerHTML="";
+    for(var i=0;i<6;i++)
+    {
+        var size=Math.random()*6+15;
+        var color="rgba("+Math.round(Math.random()*255)+","+Math.round(Math.random()*255)+","+Math.round(Math.random()*255)+","+Math.round(Math.random()+0.8)+")";
+        var numtxt=Math.floor(Math.random()*10);
+        var letter=String.fromCharCode(97+Math.floor(Math.random()*26));
+        var rotate=Math.floor(Math.random()*-150)+90;
+        var num="<span class='txt' style='color:"+color+"; font-size: "+size+"px;transform:rotatez("+rotate+"deg);'>"+numtxt+"</span>";
+        obj.innerHTML+=num;
+    }
+}
+ </script>
+</body>
+</html>
